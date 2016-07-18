@@ -1,0 +1,46 @@
+group 'coo.roobo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+task copyJars(type: Copy) {
+    from configurations.runtime
+    into 'lib' // 目标位置
+}
+dependencies {
+        compile 'ch.qos.logback:logback-classic:1.1.3'
+        compile 'org.springframework:spring-orm:4.1.6.RELEASE'
+        compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+        compile 'org.springframework:spring-tx:4.1.6.RELEASE'
+        compile 'org.springframework:spring-jdbc:4.1.6.RELEASE'
+
+        compile 'javax.servlet:jstl:1.2'
+        compile 'com.alibaba:druid:1.0.22'
+        compile 'mysql:mysql-connector-java:6.0.3'
+        compile 'org.mybatis:mybatis-spring:1.3.0'
+        compile 'org.apache.activemq:activemq-core:5.7.0'
+
+}
+// Embeded Jetty for testing
+jettyRun{
+    contextPath = "spring4"
+    httpPort = 8070
+}
+
+jettyRunWar{
+    contextPath = "spring4"
+    httpPort = 8070
+}
