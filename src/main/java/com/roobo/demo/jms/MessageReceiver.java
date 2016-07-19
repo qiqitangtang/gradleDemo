@@ -28,33 +28,33 @@ public class MessageReceiver implements Runnable {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(  
                 user, password, url);  
         Session session = null;  
-        Destination receiveQueue;  
-        try {  
-            Connection connection = connectionFactory.createConnection();  
-  
-            session = connection  
-                    .createSession(true, Session.SESSION_TRANSACTED);  
-            receiveQueue = session.createQueue(QUEUE);  
-            MessageConsumer consumer = session.createConsumer(receiveQueue);  
-  
-            connection.start();  
-            System.out.println(Thread.currentThread().getName()+" start");  
-  
-            while (true) {  
-                Message message = consumer.receive();  
-  
-                if (message instanceof TextMessage) {  
-                    TextMessage receiveMessage = (TextMessage) message;  
-                    System.out.println("我是Receiver,收到消息如下: \r\n"  
-                            + receiveMessage.getText());  
-                } else {  
-                    session.commit();  
-                    break;  
-                }  
-  
-            }  
-            connection.close();  
-            System.out.println(Thread.currentThread().getName()+" close");  
+        Destination receiveQueue;
+        try {
+            Connection connection = connectionFactory.createConnection();
+
+            session = connection
+                    .createSession(true, Session.SESSION_TRANSACTED);
+            receiveQueue = session.createQueue(QUEUE);
+            MessageConsumer consumer = session.createConsumer(receiveQueue);
+
+            connection.start();
+            System.out.println(Thread.currentThread().getName()+" start");
+
+            while (true) {
+                Message message = consumer.receive();
+
+                if (message instanceof TextMessage) {
+                    TextMessage receiveMessage = (TextMessage) message;
+                    System.out.println("我是Receiver,收到消息如下: \r\n"
+                            + receiveMessage.getText());
+                } else {
+                    session.commit();
+                    break;
+                }
+
+            }
+            connection.close();
+            System.out.println(Thread.currentThread().getName()+" close");
         } catch (JMSException e) {  
             e.printStackTrace();  
         }  
@@ -67,12 +67,12 @@ public class MessageReceiver implements Runnable {
     public void setUrl(String url) {  
         this.url = url;  
     }  
-  
-    public String getUser() {  
-        return user;  
-    }  
-  
-    public void setUser(String user) {  
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
         this.user = user;  
     }  
   

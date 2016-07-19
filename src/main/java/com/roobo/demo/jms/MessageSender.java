@@ -1,7 +1,8 @@
 package com.roobo.demo.jms;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import javax.jms.*;  
+
+import javax.jms.*;
 import java.util.Date;  
 /** 
  * 消息发送器 
@@ -18,8 +19,8 @@ public class MessageSender implements Runnable {
     public MessageSender(String queue, String url, String user, String password) {  
         this.url = url;  
         this.user = user;  
-        this.password = password;  
-        this.QUEUE = queue;  
+        this.password = password;
+        this.QUEUE = queue;
     }  
   
     @Override  
@@ -28,8 +29,8 @@ public class MessageSender implements Runnable {
                 user, password, url);  
         Session session = null;  
         Destination sendQueue;  
-        Connection connection = null;  
-  
+        Connection connection = null;
+
         int messageCount = 0;  
         try {  
             connection = connectionFactory.createConnection();  
