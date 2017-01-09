@@ -1,4 +1,4 @@
-group 'coo.roobo'
+group 'com.roobo'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
