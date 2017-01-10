@@ -11,6 +11,8 @@ public class EnumTest {
         System.out.println( Color.RED.getName() );
         System.out.println( Color.RED.getNum() );
 
+        System.out.println(Color.valueOf("RED").getNum());
+
         //遍历所有的枚举
         for( Color color : Color.values()){
             System.out.println( color + "  name: " + color.getName() + "  index: " + color.getNum() );
