@@ -44,6 +44,8 @@ dependencies {
         compile 'ch.qos.logback:logback-classic:1.0.13'
         compile 'junit:junit:4.11'
 
+        compile 'org.mongodb:mongo-java-driver:3.4.1'
+
 }
 // Embeded Jetty for testing
 jettyRun{
