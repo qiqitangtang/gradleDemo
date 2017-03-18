@@ -1,5 +1,7 @@
 package com.roobo.demo.dataStructuresAlgorithms.binaryTree;
 
+import java.util.Stack;
+
 /**
  * Created by NOTE-026 on 2017/3/13/0013.
  */
@@ -44,7 +46,7 @@ public class TreeNode {
     }
 
     /**
-     * 前序遍历
+     * 前序遍历-递归
      * @param root
      */
     private static void perOrder(Node root){
@@ -52,10 +54,35 @@ public class TreeNode {
         System.out.print(root.getValue() + " ");
         perOrder(root.getLeft());
         perOrder(root.getRight());
+
+    }
+
+
+    /**
+     * 前序遍历-非递归
+     * @param root
+     */
+    private static void preOrderNon(Node root){
+        Stack<Node> stack = new Stack();
+        Node n = root;//通过n来遍历节点
+        while(n!=null || !stack.isEmpty()){
+            //左子树全部入栈
+            while(n != null){
+                System.out.print(n.getValue() + " ");
+                stack.push(n);
+                n = n.getLeft();
+            }
+            //右子树入栈
+            if(!stack.isEmpty()){
+                n = stack.pop();
+                n = n.getRight();
+            }
+        }
+        System.out.println();
     }
 
     /**
-     * 中序遍历
+     * 中序遍历-递归
      * @param root
      */
     private static void inOrder(Node root){
@@ -66,7 +93,28 @@ public class TreeNode {
     }
 
     /**
-     * 后续遍历
+     * 中序遍历--非递归
+     * @param root
+     */
+    private static void inOrderNon(Node root){
+        Stack<Node> stack = new Stack<>();
+        Node n = root ;
+        while (n != null || !stack.isEmpty()){
+            while (n != null){
+                stack.push(n);
+                n = n.getLeft();
+            }
+            if(!stack.isEmpty()){
+                n = stack.pop();
+                System.out.print(n.getValue() + " ");
+                n = n.getRight();
+            }
+        }
+        System.out.println();
+    }
+
+    /**
+     * 后序遍历-递归
      * @param root
      */
     private static void postOrder(Node root){
@@ -74,6 +122,33 @@ public class TreeNode {
         postOrder(root.getLeft());
         postOrder(root.getRight());
         System.out.print(root.getValue() + " ");
+    }
+
+    /**
+     * 后序遍历--非递归
+     * @param root
+     */
+    private static void postOrderNon(Node root){
+        Stack<Node> stack = new Stack<>();
+        Node n = root;
+        while (n != null || !stack.isEmpty()) {
+            while (n != null) {
+                stack.push(n);
+                n = n.getLeft();
+            }
+
+            if (!stack.isEmpty()) {
+                n = stack.pop();
+                if(n.getVisited() == 1){
+                    n.setVisited(2);
+                    stack.push(n);
+                    n = n.getRight();
+                }else{
+                    System.out.print(n.getValue() + " ");
+                    n = null;
+                }
+            }
+        }
     }
 
     /**
@@ -92,13 +167,21 @@ public class TreeNode {
         //二叉树深度
         int deepth = nodeDeepth(root);
         System.out.println("二叉树的深度为" + deepth);
-        //前序遍历
+        //前序遍历--递归
         perOrder(root);
         System.out.println();
+        //前序遍历--非递归
+        preOrderNon(root);
         //中序遍历
         inOrder(root);
         System.out.println();
+        //中序遍历--非递归
+        inOrderNon(root);
         //后序遍历
         postOrder(root);
+        System.out.println();
+        //后序遍历--非递归
+        postOrderNon(root);
+
     }
 }

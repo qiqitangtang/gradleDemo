@@ -7,11 +7,21 @@ public class Node {
     private int value;
     private Node left;
     private Node right;
+    private int visited;
 
     public Node(int value, Node left, Node right) {
         this.value = value;
         this.left = left;
         this.right = right;
+        this.visited = 1;
+    }
+
+    public int getVisited() {
+        return visited;
+    }
+
+    public void setVisited(int visited) {
+        this.visited = visited;
     }
 
     public int getValue() {
