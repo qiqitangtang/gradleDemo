@@ -1,7 +1,7 @@
 ///*
 //基于wait和notify的实现消息模型
 // */
-//package com.roobo.demo.concurrent;
+//package concurrent;
 //
 //import java.util.ArrayList;
 //import java.util.List;

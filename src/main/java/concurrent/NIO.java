@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent;
+package concurrent;
 
 import java.io.FileInputStream;
 import java.io.IOException;

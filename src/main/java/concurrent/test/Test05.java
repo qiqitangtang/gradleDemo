@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent.test;
+package concurrent.test;
 
 import java.util.ArrayList;
 import java.util.List;

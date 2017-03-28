@@ -1,7 +1,7 @@
 /**
  * 基于blocking queue实现消息模式
  */
-package com.roobo.demo.concurrent.test;
+package concurrent.test;
 
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;

@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent;
+package concurrent;
 
 public class InterruptWait extends Thread {
 	public static Object lock = new Object();

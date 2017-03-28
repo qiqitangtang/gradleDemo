@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent;
+package concurrent;
 
 public class InterruptCheck extends Thread {
 

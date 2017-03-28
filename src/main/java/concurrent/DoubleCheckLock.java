@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent;
+package concurrent;
 
 public class DoubleCheckLock {
 	private volatile static DoubleCheckLock instance; // Do I need add "volatile" here?

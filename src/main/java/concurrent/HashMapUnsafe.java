@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent;
+package concurrent;
 
 import java.util.HashMap;
 import java.util.Map;

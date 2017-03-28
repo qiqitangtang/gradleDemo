@@ -1,4 +1,4 @@
-package com.roobo.demo.concurrent;
+package concurrent;
 
 public class ThreadLocalUsage extends Thread {
 	public User user = new User();
