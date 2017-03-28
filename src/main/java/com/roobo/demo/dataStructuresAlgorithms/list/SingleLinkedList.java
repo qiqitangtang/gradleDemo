@@ -407,16 +407,16 @@ public class SingleLinkedList {
         //mergeSortedList(head1,head2);
         //printList(mergeSortedListRec(head1,head2));
 
-        Node left8  = new Node(9,null);
-        Node left9 = new Node(10,left8);
-        Node left2  = new Node(3,left9);
-        Node left1  = new Node(2,left2);
-        Node left3  = new Node(4,left1);
-        Node left4  = new Node(5,left3);
-        Node left5  = new Node(6,left4);
-        Node left7  = new Node(8,left5);
-        Node left6  = new Node(7,left7);
-        Node head  = new Node(1,left6);
+//        Node left8  = new Node(9,null);
+//        Node left9 = new Node(10,left8);
+//        Node left2  = new Node(3,left9);
+//        Node left1  = new Node(2,left2);
+//        Node left3  = new Node(4,left1);
+//        Node left4  = new Node(5,left3);
+//        Node left5  = new Node(6,left4);
+//        Node left7  = new Node(8,left5);
+//        Node left6  = new Node(7,left7);
+//        Node head  = new Node(1,left6);
 //        printList(head);
         //printList(listSort(head));
         //printList(insertionSortList(head));
@@ -424,9 +424,9 @@ public class SingleLinkedList {
         //
         // isIntersect(head1,head2);
         //System.out.println(getFirstNodeInCycleHashMap(head).getValue());
-        printList(head);
-        deleteNode(head,left9);
-        printList(head);
+        //printList(head);
+        //deleteNode(head,left9);
+        //printList(head);
     }
 
 
