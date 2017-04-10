@@ -8,6 +8,7 @@ public class Wait extends Thread {
 								// synchronization resource
 			try {
 				this.wait();
+				System.out.println("get lock!");
 			} catch (InterruptedException e) {
 				e.printStackTrace(); // notify won't throw exception
 			}
@@ -23,6 +24,11 @@ public class Wait extends Thread {
 		}
 		synchronized (thread) {
 			System.out.println("Wait() will release the lock!");
+			try {
+				sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			thread.notify();
 		}
 	}
