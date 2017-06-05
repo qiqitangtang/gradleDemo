@@ -11,11 +11,11 @@
     <context:component-scan base-package="com.roobo.demo.service" />
 
 
-    <bean id="graphDatabaseService" class="org.neo4j.kernel.EmbeddedGraphDatabase" destroy-method="shutdown">
-        <constructor-arg value="target/graph.db" />
-    </bean>
+    <!--<bean id="graphDatabaseService" class="org.neo4j.kernel.EmbeddedGraphDatabase" destroy-method="shutdown">-->
+        <!--<constructor-arg value="target/graph.db" />-->
+    <!--</bean>-->
 
-    <import resource="spring-data-neo4j-context.xml" />
+    <!--<import resource="spring-data-neo4j-context.xml" />-->
     <import resource="spring-dataSource.xml"/>
 
 </beans>
