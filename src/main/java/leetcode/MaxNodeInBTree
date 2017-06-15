@@ -1,0 +1,29 @@
+import java.util.Stack;
+
+
+public class MaxNodeInBTree {
+    /**
+     * @param root the root of binary tree
+     * @return the max ndoe
+     */
+    public TreeNode maxNode(TreeNode root) {
+        TreeNode maxNode = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.empty()){
+            if (root != null){
+                if (maxNode.val < root.val) {
+                    maxNode = root;
+                }
+                if (root.right != null) {
+                    stack.push(root.right);
+                }
+                root = root.left;
+            }
+            if (root == null && !stack.empty()){
+                root = stack.pop();
+            }
+
+        }
+        return maxNode;
+    }
+}
